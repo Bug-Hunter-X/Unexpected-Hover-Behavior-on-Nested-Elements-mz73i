@@ -1,0 +1,25 @@
+The following CSS code snippet demonstrates an issue where the expected behavior of the `:hover` pseudo-class on a nested element is not achieved due to specificity issues:
+
+```css
+div {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+div:hover {
+  background-color: lightgreen;
+}
+
+div div {
+  width: 50px;
+  height: 50px;
+  background-color: lightcoral;
+}
+
+div div:hover {
+  background-color: lightpink;
+}
+```
+
+When hovering over the inner `div`, the `lightpink` color should be applied. However, the parent `div`'s `:hover` selector takes precedence due to specificity, overriding the inner `div`'s hover effect.
