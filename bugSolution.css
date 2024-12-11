@@ -1,0 +1,50 @@
+The issue can be resolved using one of the following approaches:
+
+**1. Using the `!important` flag (generally not recommended for maintainability):**
+
+```css
+div {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+div:hover {
+  background-color: lightgreen;
+}
+
+div div {
+  width: 50px;
+  height: 50px;
+  background-color: lightcoral;
+}
+
+div div:hover {
+  background-color: lightpink !important;
+}
+```
+
+**2. Increasing specificity by adding an extra selector to improve selector specificity:**
+
+```css
+div {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+div:hover {
+  background-color: lightgreen;
+}
+
+div div {
+  width: 50px;
+  height: 50px;
+  background-color: lightcoral;
+}
+
+div:hover div:hover {
+  background-color: lightpink;
+}
+```
+The `bugSolution.css` file contains these solutions. Choosing the best approach depends on your project's styling preferences and overall structure.
